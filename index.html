@@ -1,1 +1,195 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Kirkos Manufacturing College</title>
+<style>
+body{font-family:Arial;margin:0;background:#f4f6f9;text-align:center;}
+header{background:#003366;color:white;padding:25px;font-size:28px;}
+.page{display:none;padding:30px;}
+.active{display:block;}
+button{padding:12px;margin:10px;border:none;background:#003366;color:white;border-radius:5px;cursor:pointer;}
+button:hover{background:#0055aa;}
+form{max-width:500px;margin:auto;text-align:left;background:white;padding:20px;border-radius:10px;box-shadow:0 0 10px rgba(0,0,0,0.1);}
+input,select{width:100%;padding:10px;margin:8px 0;border-radius:5px;border:1px solid #ccc;}
+.submitBtn{background:green;width:100%;padding:12px;color:white;border:none;border-radius:5px;cursor:pointer;}
+label{font-weight:bold;}
+</style>
+</head>
+<body>
 
+<header>Kirkos Manufacturing College</header>
+
+<!-- HOME -->
+<div class="page active" id="home">
+<h1>Application</h1>
+<button onclick="showPage('menu')">Start Application</button>
+</div>
+
+<!-- MENU -->
+<div class="page" id="menu">
+<h2>Select Program</h2>
+<button onclick="showPage('regularMenu')">Regular Students</button>
+<button onclick="showPage('short')">Short Term</button>
+<button onclick="showPage('domestic')">Domestic Work</button>
+</div>
+
+<!-- REGULAR MENU -->
+<div class="page" id="regularMenu">
+<h2>Regular Students</h2>
+<p>Choose type of program:</p>
+<button onclick="showPage('regularDay')">Regular (Day)</button>
+<button onclick="showPage('night')">Night</button>
+<button onclick="showPage('weekend')">Weekend</button>
+</div>
+
+<!-- REGULAR (DAY) -->
+<div class="page" id="regularDay">
+<h2>Regular (Day) Program</h2>
+<form action="https://formspree.io/f/abcd1234" method="POST" enctype="multipart/form-data">
+<input name="Full Name" required placeholder="Full Name">
+<select name="Gender" required>
+<option value="">Gender</option>
+<option>Male</option>
+<option>Female</option>
+</select>
+<input type="date" name="Birth Date" required>
+<input name="Registered Level" required placeholder="Registered Level">
+<input name="Department" required placeholder="Department">
+<input name="Program" value="Regular Day" hidden>
+<input name="Phone" required placeholder="Phone Number">
+<input name="Entry Year" required placeholder="Entry Year">
+<input name="FAN No" placeholder="FAN No (Optional)">
+<label>Level / Diploma / Degree (Optional)</label>
+<input type="file" name="Level File">
+<label>ESSLE Result *</label>
+<input type="file" name="ESSLE Result" required>
+<label>Ministry Result *</label>
+<input type="file" name="Ministry Result" required>
+<label>Transcript *</label>
+<input type="file" name="Transcript" required>
+<label>Diploma / Degree *</label>
+<input type="file" name="Diploma" required>
+<button class="submitBtn">Submit</button>
+</form>
+</div>
+
+<!-- NIGHT -->
+<div class="page" id="night">
+<h2>Night Program - Regular Students</h2>
+<form action="https://formspree.io/f/abcd1234" method="POST" enctype="multipart/form-data">
+<input name="Full Name" required placeholder="Full Name">
+<select name="Gender" required>
+<option value="">Gender</option>
+<option>Male</option>
+<option>Female</option>
+</select>
+<input type="date" name="Birth Date" required>
+<input name="Registered Level" required placeholder="Registered Level">
+<input name="Department" required placeholder="Department">
+<input name="Program" value="Night" hidden>
+<input name="Phone" required placeholder="Phone Number">
+<input name="Entry Year" required placeholder="Entry Year">
+<input name="FAN No" placeholder="FAN No (Optional)">
+<label>Level / Diploma / Degree (Optional)</label>
+<input type="file" name="Level File">
+<label>ESSLE Result *</label>
+<input type="file" name="ESSLE Result" required>
+<label>Ministry Result *</label>
+<input type="file" name="Ministry Result" required>
+<label>Transcript *</label>
+<input type="file" name="Transcript" required>
+<label>Diploma / Degree *</label>
+<input type="file" name="Diploma" required>
+<button class="submitBtn">Submit</button>
+</form>
+</div><!-- WEEKEND -->
+<div class="page" id="weekend">
+<h2>Weekend Program - Regular Students</h2>
+<form action="https://formspree.io/f/abcd1234" method="POST" enctype="multipart/form-data">
+<input name="Full Name" required placeholder="Full Name">
+<select name="Gender" required>
+<option value="">Gender</option>
+<option>Male</option>
+<option>Female</option>
+</select>
+<input type="date" name="Birth Date" required>
+<input name="Registered Level" required placeholder="Registered Level">
+<input name="Department" required placeholder="Department">
+<input name="Program" value="Weekend" hidden>
+<input name="Phone" required placeholder="Phone Number">
+<input name="Entry Year" required placeholder="Entry Year">
+<input name="FAN No" placeholder="FAN No (Optional)">
+<label>Level / Diploma / Degree (Optional)</label>
+<input type="file" name="Level File">
+<label>ESSLE Result *</label>
+<input type="file" name="ESSLE Result" required>
+<label>Ministry Result *</label>
+<input type="file" name="Ministry Result" required>
+<label>Transcript *</label>
+<input type="file" name="Transcript" required>
+<label>Diploma / Degree *</label>
+<input type="file" name="Diploma" required>
+<button class="submitBtn">Submit</button>
+</form>
+</div>
+
+<!-- SHORT TERM -->
+<div class="page" id="short">
+<h2>Short Term Program</h2>
+<form action="https://formspree.io/f/abcd1234" method="POST">
+<input name="Full Name" required placeholder="Full Name">
+<select name="Gender" required>
+<option value="">Gender</option>
+<option>Male</option>
+<option>Female</option>
+</select>
+<input name="Age" required placeholder="Age">
+<input name="Phone" required placeholder="Phone">
+<input name="Training Department" required placeholder="Training Department">
+<input name="Woreda" required placeholder="Woreda">
+<input name="Subcity" required placeholder="Subcity">
+<input type="hidden" name="Program Type" value="Short Term">
+<button class="submitBtn">Submit</button>
+</form>
+</div>
+
+<!-- DOMESTIC -->
+<div class="page" id="domestic">
+<h2>Domestic Work Program</h2>
+<form action="https://formspree.io/f/abcd1234" method="POST" enctype="multipart/form-data">
+<input name="Labor ID" required placeholder="Labor ID">
+<input name="Full Name" required placeholder="Full Name">
+<input name="Religion" required placeholder="Religion">
+<input name="Phone1" required placeholder="Phone 1">
+<input name="Phone2" required placeholder="Phone 2">
+<input name="Phone3" required placeholder="Phone 3">
+<input name="Region" required placeholder="Region">
+
+<label>Country *</label>
+<select name="Country" required>
+  <option value="">Select your country</option>
+  <option value="Kuwait">Kuwait</option>
+  <option value="Qatar">Qatar</option>
+  <option value="Jordan">Jordan</option>
+  <option value="Lebanon">Lebanon</option>
+  <option value="Saudi Arabia">Saudi Arabia</option>
+  <option value="United Arab Emirates">United Arab Emirates</option>
+</select>
+
+<input name="Job Position" placeholder="Job Position (optional)">
+<label>Attach File</label>
+<input type="file" name="File" required>
+<input type="hidden" name="Program Type" value="Domestic">
+<button class="submitBtn">Submit</button>
+</form>
+</div>
+
+<script>
+function showPage(id){
+document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+document.getElementById(id).classList.add('active');
+}
+</script>
+
+</body>
+</html>
